@@ -58,3 +58,5 @@ app.use(serve(path.resolve('dist'))) // 将webpack打包好的项目目录作为
 export default app.listen(port, () => {
   console.log(`Koa is listening in ${port}`)
 })
+
+// test1
