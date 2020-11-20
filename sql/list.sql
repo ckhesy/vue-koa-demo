@@ -25,6 +25,8 @@ CREATE TABLE IF NOT EXISTS `list` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 
+INSERT INTO `list` (`user_id`, `content`, `status`) VALUES
+	(4, '还没做的事情，打扫卫生', 0);
 -- 正在导出表  todolist.list 的数据：~0 rows (大约)
 DELETE FROM `list`;
 /*!40000 ALTER TABLE `list` DISABLE KEYS */;

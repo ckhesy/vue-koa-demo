@@ -12,10 +12,11 @@ const postUserAuth = async function (ctx) {
   const data = ctx.request.body // post过来的数据存在request.body里
   const userInfo = await user.getUserByName(data.name)
   if (userInfo != null) { // 如果查无此用户会返回null
-    if (!bcrypt.compareSync(data.password, userInfo.password)) {
+    if (data.password !== userInfo.password) {
+      console.log(data.password === userInfo.password,'-------')
       ctx.body = {
         success: false, // success标志位是方便前端判断返回是正确与否
-        info: '密码错误！'
+        info: `密码错误！${data.password}${userInfo.password}`
       }
     } else {
       const userToken = {

@@ -20,7 +20,7 @@ const getUserByName = async function (name) {
       user_name: name
     }
   })
-
+  console.log(userInfo)
   return userInfo
 }
 
